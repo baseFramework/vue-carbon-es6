@@ -1,7 +1,7 @@
 export default (router) => router.map({
   '/index': {
     name: 'index',
-    component: require('./pages/Zhihu')
+    component: require('./pages/index')
   },
   '/history': {
     name: 'history',
