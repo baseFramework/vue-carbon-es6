@@ -1,6 +1,6 @@
 <template>
   <header-bar>
-    <icon-button slot="left" icon="arrow_back" v-link="{ name: 'index' }"></icon-button>
+    <!--<icon-button slot="left" icon="arrow_back" v-link="{ name: 'index' }"></icon-button>-->
     <span>{{ title }}</span>
   </header-bar>
 </template>
@@ -19,11 +19,12 @@ export default {
     }
   },
   ready () {
-    if (this.routeName === 'index' || this.routeName === 'history') {
-      this.title = '知乎日报'
-    } else if (this.routeName === 'mine') {
-      this.title = '其他'
-    }
+    this.title = '果壳'
+//    if (this.routeName === 'index' || this.routeName === 'math') {
+//      this.title = '果壳'
+//    } else if (this.routeName === 'mine') {
+//      this.title = '其他'
+//    }
   }
 }
 </script>
@@ -31,7 +32,8 @@ export default {
 <style scoped>
 .vc-header-bar {
   color: #fff !important;
-  background-color: #42b983 !important;
+  background-color: #000 !important;
+  border-bottom: 1px solid #85C155;
   position: fixed;
 }
 a {

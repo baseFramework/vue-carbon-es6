@@ -1,14 +1,18 @@
 export default (router) => router.map({
   '/index': {
-    name: 'index',
+    name: 'biology',
     component: require('./pages/index')
   },
-  '/history': {
-    name: 'history',
-    component: require('./pages/History')
+  '/math': {
+    name: 'math',
+    component: require('./pages/math')
   },
-  '/mine': {
-    name: 'mine',
-    component: require('./pages/Mine')
+  '/internet': {
+    name: 'internet',
+    component: require('./pages/internet')
+  },
+  '/interview': {
+    name: 'interview',
+    component: require('./pages/interview')
   }
 })

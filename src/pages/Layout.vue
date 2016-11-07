@@ -1,16 +1,16 @@
 <template>
   <vc-header></vc-header>
+  <vc-navi></vc-navi>
       <slot></slot>
-  <vc-footer></vc-footer>
 </template>
 
 <script>
 import vcHeader from '../components/Header'
-import vcFooter from '../components/Footer'
+import vcNavi from '../components/navi'
 export default {
   components: {
     vcHeader,
-    vcFooter
+    vcNavi
   }
 }
 </script>

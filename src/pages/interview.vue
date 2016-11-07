@@ -1,22 +1,23 @@
 <template>
   <layout>
     <div class="page-content">
-        Hello World!
+      Hello interview!
     </div>
   </layout>
 </template>
 
 <script>
-import Layout from './Layout'
+  import Layout from './Layout'
 
-export default {
-  components: {
-    Layout
-  },
-  ready () {
+  export default {
+    components: {
+      Layout
+    },
+    ready () {
+    }
   }
-}
 </script>
 
 <style scoped>
+
 </style>

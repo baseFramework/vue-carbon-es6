@@ -52,4 +52,9 @@ div.vc-page-content {
   min-height: 100%;
 }
 
+#app .page-content{
+  margin-top: 118px;
+  padding: 0 10px;
+}
+
 </style>
