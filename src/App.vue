@@ -37,6 +37,7 @@ body {
 #app a {
   color: #42b983;
   text-decoration: none;
+  font-size: 13px;
 }
 
 ul {
@@ -53,7 +54,7 @@ div.vc-page-content {
 }
 
 #app .page-content{
-  margin-top: 118px;
+  margin-top: 102px;
   padding: 0 10px;
 }
 

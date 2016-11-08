@@ -24,6 +24,7 @@
   .vc-tab-bar {
     top: 56px;
     position: fixed;
+    height: 40px;
   }
   .is-selected {
     color: #474a4f !important;
