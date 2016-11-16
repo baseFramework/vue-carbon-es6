@@ -34,3 +34,18 @@ export const getHistoryList = ({ dispatch, state }) => {
 export const setHistoryDate = ({ dispatch, state }, date) => {
   dispatch('SET_HISTORY_DATE', date)
 }
+
+export const getBiologyList = ({ dispatch, state }, start, end) => {
+  var url = state.listApi
+
+  Vue.http.get(url, {
+    params: {
+      start: start,
+      end: end,
+      object: 'biologylist'
+    }
+  })
+    .then(function (response) {
+      dispatch('GET_BIOLOGY_LIST', response)
+    })
+}

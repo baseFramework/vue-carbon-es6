@@ -10,6 +10,10 @@ export const historyList = (state) => {
   return state.historyList
 }
 
+export const biologyList = (state) => {
+  return state.biologyList
+}
+
 export const historyDate = (state) => {
   return state.historyDate
 }

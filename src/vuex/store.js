@@ -4,14 +4,16 @@ import Vue from 'vue'
 Vue.use(Vuex)
 
 const state = {
-  // apiUrl: 'http://zhihu.api.me/api/',
   apiUrl: 'https://api.ipoplary.com/api/',
   latestApi: 'zhihu/latest',
   historyApi: 'zhihu/day/',
+  listApi: '/api/list',
+  detailApi: '/api/detail',
   activePage: '',
   zhihuDailyList: [],
   zhihuDailyCount: 0,
   historyList: [],
+  biologyList: [],
   historyDate: ''
 }
 
@@ -32,6 +34,11 @@ const mutations = {
 
   SET_HISTORY_DATE (state, date) {
     state.historyDate = date
+  },
+
+  GET_BIOLOGY_LIST (state, response) {
+    console.log(response.data.data.results)
+    state.biologyList = response.data.data.results
   }
 }
 
