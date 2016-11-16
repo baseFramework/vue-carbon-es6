@@ -62,6 +62,39 @@ app.get('/api/list', function(req, res) {
   }
 });
 
+
+app.get('/api/detail', function(req, res) {
+  if (req.query && req.query.objId && req.query.object ){
+    var obj = req.query.object;
+    var objId =  req.query.objId
+    var query = new AV.Query(obj); //生物列表数据
+    var response = {};
+    query.get(objId,{
+      success: function(results) { //查询数据回调成功
+        // results is an array of AV.Object.
+        response.code = '200';
+        response.data = {};
+        response.data.results = results;
+        console.log(results.length);
+        response.msg = 'success';
+        res.send(response);
+      },
+
+      error: function(error) { //查询数据回调失败
+        response.code = '100';
+        response.msg = 'query error';
+        res.send(response);
+      }
+    })
+  }else{
+    res.send({
+      "code": "10000",
+      "msg": "参数异常",
+      "data": {}
+    });
+  }
+});
+
 if (require.main === module) {
   app.listen(app.get('port'), function() {
     console.log('[%s] Express server listening on port %d',
