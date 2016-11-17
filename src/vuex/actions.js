@@ -3,13 +3,13 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
 
-export const getBiologyList = ({ dispatch, state }, start, end) => {
+export const getBiologyList = ({ dispatch, state }, start) => {
   var url = state.listApi
 
   Vue.http.get(url, {
     params: {
       start: start,
-      end: end,
+      size: 10,
       object: 'biologylist'
     }
   })

@@ -29,20 +29,20 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/list', function(req, res) {
-  if (req.query && req.query.start && req.query.end && req.query.object){
+  if (req.query && req.query.start && req.query.size && req.query.object){
     var obj = req.query.object
     var query = new AV.Query(obj); //生物列表数据
     var response = {};
     query.addDescending('data_id');
     query.skip(req.query.start);
-    query.limit(req.query.end);
+    query.limit(req.query.size);
     query.find({
       success: function(results) { //查询数据回调成功
         // results is an array of AV.Object.
         response.code = '200';
         response.data = {};
         response.data.results = results;
-        console.log(results.length);
+        // console.log(results.length);
         response.msg = 'success';
         res.send(response);
       },

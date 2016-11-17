@@ -65,10 +65,10 @@
         console.log(this.biofinished)
         this.loading = true
         setTimeout(() => {
-          if (this.bioend < 30) {
-            var start = this.bioend + 1
+          if (this.bioend < 100) {
+            var start = this.bioend
             var end = this.bioend + 10
-            this.getBiologyList(start, end)
+            this.getBiologyList(start)
             this.setBioend(end)
           } else {
             this.setBiofinished(true)
