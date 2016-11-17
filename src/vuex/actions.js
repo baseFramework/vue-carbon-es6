@@ -48,3 +48,26 @@ export const setMathend = ({ dispatch, state }, num) => {
 export const setMathfinished = ({ dispatch, state }, boolean) => {
   dispatch('SET_MATHFINISHED', boolean)
 }
+
+export const getInternetList = ({ dispatch, state }, start) => {
+  var url = state.listApi
+
+  Vue.http.get(url, {
+    params: {
+      start: start,
+      size: 10,
+      object: 'internetlist'
+    }
+  })
+      .then(function (response) {
+        dispatch('GET_INTERNET_LIST', response)
+      })
+}
+
+export const setInternetend = ({ dispatch, state }, num) => {
+  dispatch('SET_INTERNETEND', num)
+}
+
+export const setInternetfinished = ({ dispatch, state }, boolean) => {
+  dispatch('SET_INTERNETFINISHED', boolean)
+}

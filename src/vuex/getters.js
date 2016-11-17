@@ -23,6 +23,18 @@ export const mathfinished = (state) => {
   return state.mathfinished
 }
 
+export const internetList = (state) => {
+  return state.internetList
+}
+
+export const internetend = (state) => {
+  return state.internetend
+}
+
+export const internetfinished = (state) => {
+  return state.internetfinished
+}
+
 export const routePath = (state) => {
   return state.route.path
 }

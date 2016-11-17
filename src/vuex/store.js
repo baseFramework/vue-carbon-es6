@@ -14,7 +14,11 @@ const state = {
   mathList: [],
   mathend: 10,
   mathload: false,
-  mathfinished: false
+  mathfinished: false,
+  internetList: [],
+  internetend: 10,
+  internetload: false,
+  internetfinished: false
 }
 
 const mutations = {
@@ -35,6 +39,15 @@ const mutations = {
   },
   SET_MATHFINISHED (state, boolean) {
     state.mathfinished = boolean
+  },
+  GET_INTERNET_LIST (state, response) {
+    state.internetList = state.internetList.concat(response.data.data.results)
+  },
+  SET_INTERNETEND (state, num) {
+    state.internetend = num
+  },
+  SET_INTERNETFINISHED (state, boolean) {
+    state.internetfinished = boolean
   }
 }
 
