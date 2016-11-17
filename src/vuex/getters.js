@@ -11,6 +11,18 @@ export const biofinished = (state) => {
   return state.biofinished
 }
 
+export const mathList = (state) => {
+  return state.mathList
+}
+
+export const mathend = (state) => {
+  return state.mathend
+}
+
+export const mathfinished = (state) => {
+  return state.mathfinished
+}
+
 export const routePath = (state) => {
   return state.route.path
 }

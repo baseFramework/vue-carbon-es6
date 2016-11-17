@@ -4,20 +4,17 @@ import Vue from 'vue'
 Vue.use(Vuex)
 
 const state = {
-  apiUrl: 'https://api.ipoplary.com/api/',
-  latestApi: 'zhihu/latest',
-  historyApi: 'zhihu/day/',
   listApi: '/api/list',
   detailApi: '/api/detail',
   activePage: '',
-  zhihuDailyList: [],
-  zhihuDailyCount: 0,
-  historyList: [],
   biologyList: [],
   bioend: 10,
   bioload: false,
   biofinished: false,
-  historyDate: ''
+  mathList: [],
+  mathend: 10,
+  mathload: false,
+  mathfinished: false
 }
 
 const mutations = {
@@ -29,6 +26,15 @@ const mutations = {
   },
   SET_BIOFINISHED (state, boolean) {
     state.biofinished = boolean
+  },
+  GET_MATH_LIST (state, response) {
+    state.mathList = state.mathList.concat(response.data.data.results)
+  },
+  SET_MATHEND (state, num) {
+    state.mathend = num
+  },
+  SET_MATHFINISHED (state, boolean) {
+    state.mathfinished = boolean
   }
 }
 

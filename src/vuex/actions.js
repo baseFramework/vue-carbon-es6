@@ -25,3 +25,26 @@ export const setBioend = ({ dispatch, state }, num) => {
 export const setBiofinished = ({ dispatch, state }, boolean) => {
   dispatch('SET_BIOFINISHED', boolean)
 }
+
+export const getMathList = ({ dispatch, state }, start) => {
+  var url = state.listApi
+
+  Vue.http.get(url, {
+    params: {
+      start: start,
+      size: 10,
+      object: 'mathlist'
+    }
+  })
+      .then(function (response) {
+        dispatch('GET_MATH_LIST', response)
+      })
+}
+
+export const setMathend = ({ dispatch, state }, num) => {
+  dispatch('SET_MATHEND', num)
+}
+
+export const setMathfinished = ({ dispatch, state }, boolean) => {
+  dispatch('SET_MATHFINISHED', boolean)
+}
