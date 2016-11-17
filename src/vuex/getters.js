@@ -35,6 +35,18 @@ export const internetfinished = (state) => {
   return state.internetfinished
 }
 
+export const interviewList = (state) => {
+  return state.interviewList
+}
+
+export const interviewend = (state) => {
+  return state.interviewend
+}
+
+export const interviewfinished = (state) => {
+  return state.interviewfinished
+}
+
 export const routePath = (state) => {
   return state.route.path
 }

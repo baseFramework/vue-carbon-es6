@@ -71,3 +71,26 @@ export const setInternetend = ({ dispatch, state }, num) => {
 export const setInternetfinished = ({ dispatch, state }, boolean) => {
   dispatch('SET_INTERNETFINISHED', boolean)
 }
+
+export const getInterviewList = ({ dispatch, state }, start) => {
+  var url = state.listApi
+
+  Vue.http.get(url, {
+    params: {
+      start: start,
+      size: 10,
+      object: 'interviewlist'
+    }
+  })
+      .then(function (response) {
+        dispatch('GET_INTERVIEW_LIST', response)
+      })
+}
+
+export const setInterviewend = ({ dispatch, state }, num) => {
+  dispatch('SET_INTERVIEWEND', num)
+}
+
+export const setInterviewfinished = ({ dispatch, state }, boolean) => {
+  dispatch('SET_INTERVIEWFINISHED', boolean)
+}

@@ -18,7 +18,11 @@ const state = {
   internetList: [],
   internetend: 10,
   internetload: false,
-  internetfinished: false
+  internetfinished: false,
+  interviewList: [],
+  interviewend: 10,
+  interviewload: false,
+  interviewfinished: false
 }
 
 const mutations = {
@@ -48,6 +52,15 @@ const mutations = {
   },
   SET_INTERNETFINISHED (state, boolean) {
     state.internetfinished = boolean
+  },
+  GET_INTERVIEW_LIST (state, response) {
+    state.interviewList = state.interviewList.concat(response.data.data.results)
+  },
+  SET_INTERVIEWEND (state, num) {
+    state.interviewend = num
+  },
+  SET_INTERVIEWFINISHED (state, boolean) {
+    state.interviewfinished = boolean
   }
 }
 
