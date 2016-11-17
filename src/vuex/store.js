@@ -37,8 +37,7 @@ const mutations = {
   },
 
   GET_BIOLOGY_LIST (state, response) {
-    console.log(response.data.data.results)
-    state.biologyList = response.data.data.results
+    state.biologyList = state.biologyList.concat(response.data.data.results)
   }
 }
 

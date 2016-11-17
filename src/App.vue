@@ -49,13 +49,11 @@ li {
 }
 
 div.vc-page-content {
-  padding: 50px 0 50px 0;
   min-height: 100%;
 }
 
 #app .page-content{
   margin-top: 102px;
-  padding: 0 10px;
 }
 
 </style>
