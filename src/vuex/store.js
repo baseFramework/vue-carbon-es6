@@ -16,6 +16,7 @@ const state = {
   biologyList: [],
   bioend: 10,
   bioload: false,
+  biofinished: false,
   historyDate: ''
 }
 
@@ -25,6 +26,9 @@ const mutations = {
   },
   SET_BIOEND (state, num) {
     state.bioend = num
+  },
+  SET_BIOFINISHED (state, boolean) {
+    state.biofinished = boolean
   }
 }
 

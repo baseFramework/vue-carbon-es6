@@ -7,6 +7,10 @@ export const bioend = (state) => {
   return state.bioend
 }
 
+export const biofinished = (state) => {
+  return state.biofinished
+}
+
 export const routePath = (state) => {
   return state.route.path
 }

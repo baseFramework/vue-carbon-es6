@@ -21,3 +21,7 @@ export const getBiologyList = ({ dispatch, state }, start, end) => {
 export const setBioend = ({ dispatch, state }, num) => {
   dispatch('SET_BIOEND', num)
 }
+
+export const setBiofinished = ({ dispatch, state }, boolean) => {
+  dispatch('SET_BIOFINISHED', boolean)
+}

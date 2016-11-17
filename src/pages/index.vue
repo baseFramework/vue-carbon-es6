@@ -15,7 +15,7 @@
             </card>
           </item-cell>
         </list>
-        <infinite-scroll v-bind:trigger="$els.scroller" v-on:load="loadMore" v-bind:loading="loading"></infinite-scroll>
+        <infinite-scroll v-if="biofinished === false" v-bind:trigger="$els.scroller" v-on:load="loadMore" v-bind:loading="loading" style="padding-bottom: 10px"></infinite-scroll>
       </scroll-view>
     </div>
   </layout>
@@ -23,8 +23,8 @@
 
 <script>
   import Layout from './Layout'
-  import {getBiologyList, setBioend} from '../vuex/actions'
-  import {biologyList, bioend} from '../vuex/getters'
+  import {getBiologyList, setBioend, setBiofinished} from '../vuex/actions'
+  import {biologyList, bioend, biofinished} from '../vuex/getters'
   import event from '../common/event'
 
   export default {
@@ -38,14 +38,17 @@
       // 数据可以直接使用
       getters: {
         biologyList,
-        bioend
+        bioend,
+        biofinished
       },
       // 方法可以直接调用
       actions: {
         // 获取生物列表数据
         getBiologyList,
         // 设置生物数字
-        setBioend
+        setBioend,
+        // 设置生物是否结束
+        setBiofinished
       }
     },
     components: {
@@ -59,17 +62,19 @@
     },
     methods: {
       loadMore () {
+        console.log(this.biofinished)
         this.loading = true
-        console.log(this.bioend)
         setTimeout(() => {
-          this.loading = false
           if (this.bioend < 30) {
             var start = this.bioend + 1
             var end = this.bioend + 10
             this.getBiologyList(start, end)
             this.setBioend(end)
+          } else {
+            this.setBiofinished(true)
           }
-        }, 1000)
+          this.loading = false
+        }, 100)
       }
     }
   }
