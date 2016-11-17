@@ -23,8 +23,8 @@
 
 <script>
   import Layout from './Layout'
-  import {getBiologyList} from '../vuex/actions'
-  import {biologyList} from '../vuex/getters'
+  import {getBiologyList, setBioend} from '../vuex/actions'
+  import {biologyList, bioend} from '../vuex/getters'
   import event from '../common/event'
 
   export default {
@@ -37,12 +37,15 @@
     vuex: {
       // 数据可以直接使用
       getters: {
-        biologyList
+        biologyList,
+        bioend
       },
       // 方法可以直接调用
       actions: {
         // 获取生物列表数据
-        getBiologyList
+        getBiologyList,
+        // 设置生物数字
+        setBioend
       }
     },
     components: {
@@ -50,20 +53,22 @@
     },
     ready () {
       event.bindEvent()
-      this.getBiologyList(0, 10)
+      if (this.bioend === 10) {
+        this.getBiologyList(0, 10)
+      }
     },
     methods: {
       loadMore () {
-        console.log('action more!')
+        this.loading = true
+        console.log(this.bioend)
         setTimeout(() => {
-          if (this.end < 50) {
-            this.loading = true
-            var start = this.end + 1
-            var end = this.end + 10
-            this.getBiologyList(start, end)
-            this.end = end
-          }
           this.loading = false
+          if (this.bioend < 30) {
+            var start = this.bioend + 1
+            var end = this.bioend + 10
+            this.getBiologyList(start, end)
+            this.setBioend(end)
+          }
         }, 1000)
       }
     }

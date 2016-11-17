@@ -1,21 +1,10 @@
-export const zhihuDailyList = (state) => {
-  return state.zhihuDailyList
-}
-
-export const zhihuDailyCount = (state) => {
-  return state.zhihuDailyCount
-}
-
-export const historyList = (state) => {
-  return state.historyList
-}
 
 export const biologyList = (state) => {
   return state.biologyList
 }
 
-export const historyDate = (state) => {
-  return state.historyDate
+export const bioend = (state) => {
+  return state.bioend
 }
 
 export const routePath = (state) => {
